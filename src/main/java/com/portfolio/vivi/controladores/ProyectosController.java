@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/proyectos")
-@CrossOrigin(origins ="*")
 public class ProyectosController {
     @Autowired
     private ProyectosService proyectosService;
