@@ -58,7 +58,7 @@ public class PortfolioArgProgBackendApplication implements CommandLineRunner {
 		return new WebMvcConfigurer(){
 			@Override
 			public void addCorsMappings(CorsRegistry registry){
-				registry.addMapping("/**").allowedOrigins("https://portfolio-viviana-roa.web.app");
+				registry.addMapping("/**").allowedOrigins("https://portfolio-viviana-roa.web.app").allowedMethods("*").allowedHeaders("*");
 			}
 		};
 	}
