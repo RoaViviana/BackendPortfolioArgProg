@@ -5,8 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -62,4 +64,11 @@ public class PortfolioArgProgBackendApplication implements CommandLineRunner {
 			}
 		};
 	}
+	@Bean(name = DispatcherServletAutoConfiguration.DEFAULT_DISPATCHER_SERVLET_BEAN_NAME)
+	public DispatcherServlet dispatcherServlet() {
+		DispatcherServlet dispatcherServlet = new DispatcherServlet();
+		dispatcherServlet.setDispatchOptionsRequest(true);
+		return dispatcherServlet;
+	}
 }
+
