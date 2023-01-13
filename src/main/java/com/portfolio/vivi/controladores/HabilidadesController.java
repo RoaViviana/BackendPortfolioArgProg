@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/habilidades")
-@CrossOrigin("*")
+@CrossOrigin("https://portfolio-viviana-roa.web.app")
 public class HabilidadesController {
 
     @Autowired

@@ -13,7 +13,7 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("/usuarios")
-@CrossOrigin("*")
+@CrossOrigin("https://portfolio-viviana-roa.web.app")
 public class UsuarioController {
 
     @Autowired
