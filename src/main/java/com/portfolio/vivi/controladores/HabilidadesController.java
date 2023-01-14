@@ -12,23 +12,27 @@ public class HabilidadesController {
 
     @Autowired
    HabilidadesService habilidadesService;
-
+    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
     @PostMapping("/")
     public ResponseEntity<Habilidades> guardarHabilidades(@RequestBody Habilidades habilidades){
         return ResponseEntity.ok(habilidadesService.agregarHabilidades(habilidades));
     }
+    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
     @PutMapping("/")
     public ResponseEntity<Habilidades> actualizarHabilidades(@RequestBody Habilidades habilidades){
         return ResponseEntity.ok(habilidadesService.actualizarHabilidades(habilidades));
     }
+    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
     @GetMapping("/")
     public ResponseEntity<?> listarHabilidades(){
         return ResponseEntity.ok(habilidadesService.obtenerHabilidades());
     }
+    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
     @GetMapping("/{habilidadesId}")
     public Habilidades listarHabilidadporId(@PathVariable("habilidadesId") Long habilidadesId){
         return habilidadesService.obtenerHabilidad(habilidadesId);
     }
+    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
     @DeleteMapping("/{habilidadesId}")
     public void eliminarHabilidades(@PathVariable("habilidadesId") Long habilidadesId){
         habilidadesService.eliminarHabilidades(habilidadesId);

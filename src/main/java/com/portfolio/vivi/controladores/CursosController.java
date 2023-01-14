@@ -11,22 +11,27 @@ import org.springframework.web.bind.annotation.*;
 public class CursosController {
     @Autowired
     private CursosService cursosService;
+    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
     @PostMapping("/")
     public ResponseEntity<Cursos> guardarCurso(@RequestBody Cursos cursos){
         return ResponseEntity.ok(cursosService.agregarCursos(cursos));
     }
+    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
     @PutMapping("/")
     public ResponseEntity<Cursos> actualizarCursos(@RequestBody Cursos cursos){
         return ResponseEntity.ok(cursosService.actualizarCursos(cursos));
     }
+    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
     @GetMapping("/")
     public ResponseEntity<?> listarCursos(){
         return ResponseEntity.ok(cursosService.obtenerCursos());
     }
+    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
     @GetMapping("/{cursosId}")
     public Cursos listarCursos(@PathVariable("cursosId") Long cursosId){
         return cursosService.obtenerCurso(cursosId);
     }
+    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
     @DeleteMapping("/{cursosId}")
     public void eliminarCurso(@PathVariable("cursosId") Long cursosId){
        cursosService.eliminarCurso(cursosId);

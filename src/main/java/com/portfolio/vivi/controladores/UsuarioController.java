@@ -20,7 +20,7 @@ public class UsuarioController {
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
-
+    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
     @PostMapping("/")
     public Usuario guardarUsuario(@RequestBody Usuario usuario) throws Exception{
         usuario.setPerfil("default.png");
@@ -41,12 +41,12 @@ public class UsuarioController {
         return usuarioService.guardarUsuario(usuario,usuarioRoles);
     }
 
-
+    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
     @GetMapping("/{username}")
     public Usuario obtenerUsuario(@PathVariable("username") String username){
         return usuarioService.obtenerUsuario(username);
     }
-
+    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
     @DeleteMapping("/{usuarioId}")
     public void eliminarUsuario(@PathVariable("usuarioId") Long usuarioId){
         usuarioService.eliminarUsuario(usuarioId);
