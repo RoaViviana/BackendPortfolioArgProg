@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 public class EstudiosController {
     @Autowired
     private EstudiosService estudiosService;
-    @CrossOrigin("+")
+    @CrossOrigin("*")
     @PostMapping("/")
     public ResponseEntity<Estudios> guardarEstudios(@RequestBody Estudios estudios){
         return ResponseEntity.ok(estudiosService.agregarEstudios(estudios));
