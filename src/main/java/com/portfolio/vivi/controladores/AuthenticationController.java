@@ -29,7 +29,7 @@ public class AuthenticationController {
     @Autowired
     private JwtUtils jwtUtils;
 
-    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
+    @CrossOrigin("https://portfolio-viviana-roa.web.app")
     @PostMapping("/generate-token")
     public ResponseEntity<?> generarToken(@RequestBody JwtRequest jwtRequest) throws Exception {
         try{
