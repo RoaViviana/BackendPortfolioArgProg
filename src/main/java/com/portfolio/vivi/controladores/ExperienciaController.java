@@ -11,27 +11,27 @@ import org.springframework.web.bind.annotation.*;
 public class ExperienciaController {
     @Autowired
     private ExperienciaService experienciaService;
-    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
+    @CrossOrigin("*")
     @PostMapping("/")
     public ResponseEntity<Experiencia> guardarExperiencia(@RequestBody Experiencia experiencia){
         return ResponseEntity.ok(experienciaService.agregarExperiencia(experiencia));
     }
-    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
+    @CrossOrigin("*")
     @PutMapping("/")
     public ResponseEntity<Experiencia> actualizarExperiencia(@RequestBody Experiencia experiencia){
         return ResponseEntity.ok(experienciaService.actualizarExperiencia(experiencia));
     }
-    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
+    @CrossOrigin("*")
     @GetMapping("/")
     public ResponseEntity<?> listarExperiencias(){
         return ResponseEntity.ok(experienciaService.obtenerExperiencias());
     }
-    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
+    @CrossOrigin("*")
     @GetMapping("/{experienciaId}")
     public Experiencia listarExperiencias(@PathVariable("experienciaId") Long experienciaId){
         return experienciaService.obtenerExperiencia(experienciaId);
     }
-    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
+    @CrossOrigin("*")
     @DeleteMapping("/{experienciaId}")
     public void eliminarExperiencia(@PathVariable("experienciaId") Long experienciaId){
         experienciaService.eliminarExperiencia(experienciaId);

@@ -13,28 +13,28 @@ import org.springframework.web.bind.annotation.*;
 public class ContactoController {
     @Autowired
     private ContactoService contactoService;
-    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
+    @CrossOrigin("*")
     @PostMapping("/")
     public ResponseEntity<Contacto> guardarContacto(@RequestBody Contacto contacto){
         return ResponseEntity.ok(contactoService.agregarContacto(contacto));
     }
-    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
+    @CrossOrigin("*")
     @PutMapping("/")
     public ResponseEntity<Contacto> actualizarContacto(@RequestBody Contacto contacto){
         return ResponseEntity.ok(contactoService.actualizarContacto(contacto));
     }
 
-    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
+    @CrossOrigin("*")
     @GetMapping("/")
     public ResponseEntity<?> listarContactos(){
         return ResponseEntity.ok(contactoService.obtenerContactos());
     }
-    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
+    @CrossOrigin("*")
     @GetMapping("/{contactoId}")
     public Contacto listarContacto(@PathVariable("contactoId") Long contactoId){
         return contactoService.obtenerContacto(contactoId);
     }
-    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
+    @CrossOrigin("*")
     @DeleteMapping("/{contactoId}")
     public void eliminarContacto(@PathVariable("contactoId") Long contactoId){
         contactoService.eliminarContacto(contactoId);

@@ -11,27 +11,27 @@ import org.springframework.web.bind.annotation.*;
 public class ProyectosController {
     @Autowired
     private ProyectosService proyectosService;
-    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
+    @CrossOrigin("*")
     @PostMapping("/")
     public ResponseEntity<Proyectos> guardarProyecto(@RequestBody Proyectos proyectos){
         return ResponseEntity.ok(proyectosService.agregarProyectos(proyectos));
     }
-    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
+    @CrossOrigin("*")
     @PutMapping("/")
     public ResponseEntity<Proyectos> actualizarProyectos(@RequestBody Proyectos proyectos){
         return ResponseEntity.ok(proyectosService.actualizarProyectos(proyectos));
     }
-    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
+    @CrossOrigin("*")
     @GetMapping("/")
     public ResponseEntity<?> listarProyectos(){
         return ResponseEntity.ok(proyectosService.obtenerProyectos());
     }
-    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
+    @CrossOrigin("*")
     @GetMapping("/{proyectosId}")
     public Proyectos listarProyectos(@PathVariable("proyectosId") Long proyectosId){
         return proyectosService.obtenerProyecto(proyectosId);
     }
-    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
+    @CrossOrigin("*")
     @DeleteMapping("/{proyectosId}")
     public void eliminarProyecto(@PathVariable("proyectosId") Long proyectosId){
         proyectosService.eliminarProyecto(proyectosId);

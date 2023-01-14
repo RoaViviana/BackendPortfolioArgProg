@@ -16,22 +16,22 @@ public class CursosController {
     public ResponseEntity<Cursos> guardarCurso(@RequestBody Cursos cursos){
         return ResponseEntity.ok(cursosService.agregarCursos(cursos));
     }
-    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
+    @CrossOrigin("+")
     @PutMapping("/")
     public ResponseEntity<Cursos> actualizarCursos(@RequestBody Cursos cursos){
         return ResponseEntity.ok(cursosService.actualizarCursos(cursos));
     }
-    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
+    @CrossOrigin("+")
     @GetMapping("/")
     public ResponseEntity<?> listarCursos(){
         return ResponseEntity.ok(cursosService.obtenerCursos());
     }
-    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
+    @CrossOrigin("+")
     @GetMapping("/{cursosId}")
     public Cursos listarCursos(@PathVariable("cursosId") Long cursosId){
         return cursosService.obtenerCurso(cursosId);
     }
-    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
+    @CrossOrigin("+")
     @DeleteMapping("/{cursosId}")
     public void eliminarCurso(@PathVariable("cursosId") Long cursosId){
        cursosService.eliminarCurso(cursosId);

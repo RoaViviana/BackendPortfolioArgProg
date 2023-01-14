@@ -29,7 +29,7 @@ public class AuthenticationController {
     @Autowired
     private JwtUtils jwtUtils;
 
-    @CrossOrigin("https://portfolio-viviana-roa.web.app")
+    @CrossOrigin("*")
     @PostMapping("/generate-token")
     public ResponseEntity<?> generarToken(@RequestBody JwtRequest jwtRequest) throws Exception {
         try{
@@ -53,7 +53,7 @@ public class AuthenticationController {
             throw  new Exception("Credenciales invalidas " + e.getMessage());
         }
     }
-    @CrossOrigin("https://portfolio-viviana-roa.web.app/#/")
+    @CrossOrigin("*")
     @GetMapping("/actual-usuario")
     public Usuario obtenerUsuarioActual(Principal principal){
         return (Usuario) this.userDetailsService.loadUserByUsername(principal.getName());
