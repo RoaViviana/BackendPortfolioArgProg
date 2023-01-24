@@ -17,25 +17,4 @@ public class ContactoServiceImpl implements ContactoService {
         return contactoRepository.save(contacto);
     }
 
-    @Override
-    public Contacto actualizarContacto(Contacto contacto) {
-        return contactoRepository.save(contacto);
-    }
-
-    @Override
-    public Set<Contacto> obtenerContactos() {
-        return new LinkedHashSet<>(contactoRepository.findAll());
-    }
-
-    @Override
-    public Contacto obtenerContacto(Long contactoId) {
-        return contactoRepository.findById(contactoId).get();
-    }
-
-    @Override
-    public void eliminarContacto(Long contactoId) {
-        Contacto contacto = new Contacto();
-        contacto.setContactoId(contactoId);
-        contactoRepository.delete(contacto);
-    }
 }
